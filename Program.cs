@@ -15,7 +15,7 @@ internal class Program
             //     foreach
             // var s = numeros.Skip(10);
             // var t = s.Take(20).ToList();
-            Console.WriteLine(string.Format("Tamanho lista {0}, skip {1} e take {2}", numeros.Count, s, t));
+            //Console.WriteLine(string.Format("Tamanho lista {0}, skip {1} e take {2}", numeros.Count, s, t));
             Console.WriteLine("What is your name?");
             var name = Console.ReadLine();
             var currentDate = DateTime.Now;
