@@ -17,6 +17,21 @@ $ dotnet build --configuration Release --runtime ubuntu.18.04-x64
 # Publicando
 $ dotnet publish --configuration Release --version-suffix 1 --output bin/output/
 
+# Publicando no docker
+$ docker build -t app-console -f Dockerfile .
+
+# Criando Container
+$ docker create --name app-console-container app-console
+
+# Executando container
+$ docker start app-console-container
+
+# Baixar as imagems e executar os containers em modo não iterativo(deve ser utilizado na primeira execução)
+$ docker-compose up -d
+
+# Apagar as imagems e parar os containers (deve ser utilizado quando precisar recriar as imagens)
+$ docker-compose down
+
 ```
 
 ## 📌 Dependências utilizadas nesse projeto

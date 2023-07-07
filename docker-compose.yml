@@ -1,0 +1,24 @@
+version: '3.9'
+
+# Quando utilizar redes específicas
+networks:
+  network_private:
+    driver: bridge
+  network_public:
+    driver: bridge
+
+services:
+  app_console:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: conteiner_app_console
+    networks:
+      - network_private
+      - network_public
+    environment:
+      - BANCO_HOST_IP=$BANCO_HOST_IP
+      - BANCO_PORTA=$BANCO_PORTA
+      - BANCO_USUARIO=$BANCO_USUARIO
+      - BANCO_SENHA=$BANCO_SENHA
+      - BANCO_NOME=$BANCO_NOME
